@@ -1,8 +1,92 @@
 import React from "react";
 import "./Services.css";
+import { FaPaintBrush } from "react-icons/fa";
+import { BsCodeSquare } from "react-icons/bs";
+import { TfiWrite } from "react-icons/tfi";
 
 const Services = () => {
-  return <div>Services</div>;
+  return (
+    <section id="services">
+      <div className="section__wrapper services__wrapper">
+        <div className="section__header center">
+          <h2 className="primary__title">Services</h2>
+          <p className="text__muted description">
+            I transform your ideas, and consequently your desires, into a
+            distinctive web project that both inspires you and captivates your
+            customers.
+          </p>
+        </div>
+
+        <div className="services__group">
+          <article className="service">
+            <div className="service__top">
+              <div className="icon__container">
+                <FaPaintBrush className="icon" />
+              </div>
+              <h3 className="title">UI/UX Design</h3>
+            </div>
+            <div className="service__middle">
+              <p className="text__muted description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione voluptatum earum quam tempore, repellat aut vero ut eum,
+                provident accusamus recusandae eligendi, adipisci sequi
+                reiciendis quisquam? Sapiente optio rerum sequi!
+              </p>
+            </div>
+            <div className="service__bottom">
+              <button className="btn btn__primary">Read more</button>
+            </div>
+          </article>
+          {/* End ui/ux */}
+
+          <article
+            className="service"
+            style={{ "--color-primary": "var(--color-success)" }}
+          >
+            <div className="service__top">
+              <div className="icon__container">
+                <BsCodeSquare className="icon" />
+              </div>
+              <h3 className="title">Web Development</h3>
+            </div>
+            <div className="service__middle">
+              <p className="text__muted description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione voluptatum earum quam tempore, repellat aut vero ut eum,
+                provident accusamus recusandae eligendi, adipisci sequi
+                reiciendis quisquam? Sapiente optio rerum sequi!
+              </p>
+            </div>
+            <div className="service__bottom">
+              <button className="btn btn__primary">Read more</button>
+            </div>
+          </article>
+          {/* End web development */}
+
+          <article className="service" style={{ "--color-primary": "purple" }}>
+            <div className="service__top">
+              <div className="icon__container">
+                <TfiWrite className="icon" />
+              </div>
+              <h3 className="title">Content Creation</h3>
+            </div>
+            <div className="service__middle">
+              <p className="text__muted description">
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+                Ratione voluptatum earum quam tempore, repellat aut vero ut eum,
+                provident accusamus recusandae eligendi, adipisci sequi
+                reiciendis quisquam? Sapiente optio rerum sequi!
+              </p>
+            </div>
+            <div className="service__bottom">
+              <button className="btn btn__primary">Read more</button>
+            </div>
+          </article>
+          {/* End content creation */}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Services;
