@@ -272,11 +272,11 @@ export const experience = [
         level: "Experienced",
       },
       {
-        skill: "MangoDB",
+        skill: "MongoDB",
         level: "Intermediate",
       },
       {
-        skill: "PHP",
+        skill: "Express JS",
         level: "Experienced",
       },
       {
