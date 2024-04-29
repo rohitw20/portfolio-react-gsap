@@ -98,6 +98,7 @@ img {
 }
 
 .btn__primary {
+  background: var(--gradient-1);
   color: var(--color-white);
   background-size: 200% auto;
   transition: var(--transition);
