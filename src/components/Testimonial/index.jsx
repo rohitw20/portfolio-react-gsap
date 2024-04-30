@@ -41,8 +41,8 @@ const Testimonial = () => {
         <div className="section__header">
           <h2 className="primary__title">Testimonials</h2>
           <p className="text__muted description">
-            iscover what clients are saying about their experiences working with
-            me as their trusted web developer. From startups to established
+            Discover what clients are saying about their experiences working
+            with me as their trusted web developer. From startups to established
             businesses, my dedication to crafting exceptional online experiences
             shines through in their words.
           </p>
