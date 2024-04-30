@@ -39,10 +39,8 @@
   background: var(--color-primary);
 }
 
-@media (max-width: px) {
+@media (max-width: 950px) {
   #testimonial .section__wrapper {
     grid-template-columns: 100%;
   }
-}
-@media (max-width: px) {
 }
