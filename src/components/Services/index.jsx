@@ -1,12 +1,52 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./Services.css";
 import { FaPaintBrush } from "react-icons/fa";
 import { BsCodeSquare } from "react-icons/bs";
 import { TfiWrite } from "react-icons/tfi";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const Services = () => {
+  const container = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const el = container.current;
+    gsap.fromTo(
+      ".service__head",
+      {
+        opacity: 0,
+      },
+      {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: el,
+        },
+      }
+    );
+
+    gsap.fromTo(
+      ".service",
+      {
+        y: -50,
+        opacity: 0,
+      },
+      {
+        y: 0,
+        opacity: 1,
+        duration: 5,
+        scrollTrigger: {
+          trigger: el,
+          start: "-100% bottom",
+          end: "bottom 20%",
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section id="services">
+    <section id="services" ref={container}>
       <div className="section__wrapper services__wrapper">
         <div className="section__header center">
           <h2 className="primary__title">Services</h2>
