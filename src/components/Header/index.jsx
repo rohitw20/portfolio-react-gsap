@@ -1,11 +1,61 @@
-import React from "react";
+import React, { useRef } from "react";
 import "./Header.css";
 import { profile1 } from "../../images";
 import Facts from "./Facts";
+import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const Header = () => {
+  const container = useRef(null);
+  gsap.registerPlugin(useGSAP);
+
+  useGSAP(
+    () => {
+      gsap.fromTo(
+        ".profile__photo__container",
+        {
+          scale: 0.5,
+          duration: 1,
+          opacity: 0.5,
+        },
+        {
+          scale: 1,
+          duration: 1,
+          ease: "sine.in",
+          opacity: 1,
+        }
+      );
+
+      gsap.from(".intro__text", {
+        fontSize: 100,
+        duration: 1,
+        delay: 1,
+        ease: "sine.in",
+      });
+
+      const timeline = gsap.timeline();
+      timeline
+        .from("header__info__top", {
+          opacity: 0,
+        })
+        .from(".header__title", {
+          opacity: 0,
+          y: -30,
+        })
+        .from(".header__description", {
+          opacity: 0,
+        })
+        .from(".btn", {
+          x: -40,
+          opacity: 0,
+          stagger: 0.5,
+        });
+    },
+    { scope: container }
+  );
+
   return (
-    <header className="blur-effect" id="header">
+    <header className="blur-effect" id="header" ref={container}>
       <div className="stroke__text intro__text">HELLO</div>
       <div className="section__wrapper header__container">
         <div className="column intro__container blur-effect">
