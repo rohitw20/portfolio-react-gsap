@@ -1,10 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import "./About.css";
 import { profile2 } from "../../images";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 const About = () => {
+  const container = useRef(null);
+  gsap.registerPlugin(ScrollTrigger);
+
+  useEffect(() => {
+    const el = container.current;
+    gsap.fromTo(
+      ".about__container",
+      {
+        scale: 0.7,
+      },
+      {
+        scale: 1,
+        scrollTrigger: {
+          trigger: el,
+          scrub: true,
+        },
+      }
+    );
+  }, []);
+
   return (
-    <section id="about">
+    <section id="about" ref={container}>
       <div className="section__wrapper about__container">
         <div className="me__container blur-effect">
           <div className="photo_container">
